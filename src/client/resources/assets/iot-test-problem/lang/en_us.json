@@ -1,0 +1,8 @@
+{
+  "iot-test-problem.dummyScreenTitle": "Iot test problem",
+
+  "iot-test-problem.msgBoxPlaceholder": "Input your message",
+  "iot-test-problem.enterBtn": "Iot Screen",
+  "iot-test-problem.backBtn": "Close",
+  "iot-test-problem.backBtnTooltip": "Go back to main menu"
+}

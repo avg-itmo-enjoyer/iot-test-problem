@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "iot-test-problem",
+	"version": "${version}",
+	"name": "Iot Test Problem",
+	"description": "Mod created as a solution for IOT test problem",
+	"authors": [
+		"Kharlamov Vladislav"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/iot-test-problem/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.example.IotTestProblem",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.example.IotTestProblemClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"iot-test-problem.mixins.json",
+		{
+			"config": "iot-test-problem.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
