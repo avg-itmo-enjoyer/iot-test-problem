@@ -1,5 +1,6 @@
 package com.example.screen
 
+import com.example.IotTestProblem
 import com.example.MessageC2SPayload
 import com.example.widget.client.PlaceholderTextFieldWidget
 import net.fabricmc.api.EnvType
@@ -23,6 +24,7 @@ class DummyScreen(
     override fun init() {
         sendBtn = ButtonWidget
             .builder(Text.literal("Send")) { sendMsg() }
+            //TODO(Kharlamov): Move Text.literal to Text.translatable
             .tooltip(Tooltip.of(Text.literal("Send encoded message to server")))
             .dimensions(width / 2 - 100, height / 2 + 15, 200, 20)
             .build()
@@ -30,11 +32,11 @@ class DummyScreen(
         msgBox = PlaceholderTextFieldWidget(
             this.textRenderer,
             width / 2 - 100, height / 2 - 15, 200, 20,
-            Text.translatable("iot-test-problem.msgBoxPlaceholder")
+            Text.translatable("${IotTestProblem.MOD_ID}.msgBoxPlaceholder")
         )
 
-        backBtn = ButtonWidget.builder(Text.translatable("iot-test-problem.backBtn")) { close() }
-            .tooltip(Tooltip.of(Text.translatable("iot-test-problem.backBtnTooltip")))
+        backBtn = ButtonWidget.builder(Text.translatable("${IotTestProblem.MOD_ID}.backBtn")) { close() }
+            .tooltip(Tooltip.of(Text.translatable("${IotTestProblem.MOD_ID}.backBtnTooltip")))
             .dimensions(width - 105, height - 25, 100, 20)
             .build()
 
@@ -50,7 +52,7 @@ class DummyScreen(
     override fun render(context: DrawContext?, mouseX: Int, mouseY: Int, deltaTicks: Float) {
         super.render(context, mouseX, mouseY, deltaTicks)
 
-        //Это просто невероятно... 0xFFFFFFFF нормально переполняется в Java, но в Kotlin переполнение вызывает мисматч типов...
+        //Это просто невероятно... 0xFFFFFFFF нормально переполняется в Java, но в Kotlin переполнение вызывает несоответствие типов...
         // А главное - на ноутбуке не сразу заметно количество знаков в числе...
         context!!.drawCenteredTextWithShadow(
             textRenderer,
@@ -59,8 +61,6 @@ class DummyScreen(
             0xFFFFFFFF.toInt()
         )
     }
-
-//    override fun close() = if (parent != null) this.client!!.setScreen(parent) else Unit
 
     override fun shouldPause(): Boolean = false
 }

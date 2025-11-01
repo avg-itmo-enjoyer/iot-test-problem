@@ -15,7 +15,7 @@ object IotTestProblemClient : ClientModInitializer {
 	override fun onInitializeClient() {
         openScreenKeybind = KeyBindingHelper.registerKeyBinding(
             KeyBinding(
-                "key.iot-test-problem.open_screen",
+                "key.${IotTestProblem.MOD_ID}.open_screen",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_GRAVE_ACCENT,
                 "Iot test problem"
@@ -24,9 +24,7 @@ object IotTestProblemClient : ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (openScreenKeybind.wasPressed()) {
-                client.setScreen(
-                    DummyScreen(Text.literal("Iot test problem"))
-                )
+                client.setScreen(DummyScreen(Text.literal("Iot test problem")))
             }
         }
 	}

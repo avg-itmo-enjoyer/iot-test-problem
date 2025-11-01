@@ -6,7 +6,6 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.text.Text;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.util.Formatting;
 
 @Environment(EnvType.CLIENT)
 public class PlaceholderTextFieldWidget extends TextFieldWidget {

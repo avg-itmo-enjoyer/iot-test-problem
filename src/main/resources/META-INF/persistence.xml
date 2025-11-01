@@ -18,11 +18,13 @@
             <property name="jakarta.persistence.jdbc.password"
                       value="postgres"/>
 
+            <!-- Hibernate config -->
+            <property name="hibernate.configuration.xml.enabled" value="false"/>
+
             <!-- HikariCP connection pool -->
             <property name="hibernate.hikari.minimumIdle" value="5"/>
             <property name="hibernate.hikari.maximumPoolSize" value="10"/>
             <property name="hibernate.hikari.idleTimeout" value="30000"/>
-
             <property name="hibernate.connection.provider_class" value="com.zaxxer.hikari.hibernate.HikariConnectionProvider"/>
         </properties>
     </persistence-unit>

@@ -1,10 +1,8 @@
 {
 	"required": true,
-	"package": "com.example.mixin.client",
+	"package": "com.example.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"client": [
-      "TitleScreenMixin"
-	],
+	"client": [],
 	"injectors": {
 		"defaultRequire": 1
 	}
