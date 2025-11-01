@@ -32,8 +32,6 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
-
-//    log4jConfigs.from(file("log4j-dev.xml"))
 }
 
 dependencies {
@@ -46,7 +44,15 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
+    //Protobuf dependency:
+    //FIXME(Kharlamov): According to IntelliJ this dependency has 7.5 CVE vulnerability. Have to fix this later.
     implementation 'com.google.protobuf:protobuf-kotlin:3.25.1'
+
+    //Hibernate dependencies:
+    modImplementation 'org.postgresql:postgresql:42.7.8'
+    modImplementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+    modImplementation 'org.hibernate.orm:hibernate-core:6.6.34.Final'
+    modImplementation 'com.zaxxer:HikariCP:7.0.2'
 }
 
 processResources {

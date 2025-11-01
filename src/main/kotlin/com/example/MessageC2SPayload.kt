@@ -1,3 +1,5 @@
+package com.example
+
 import com.example.proto.IotTestProblemMessage
 import com.example.proto.iotTestProblemMessage
 import net.minecraft.network.RegistryByteBuf

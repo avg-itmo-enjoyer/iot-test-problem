@@ -1,6 +1,6 @@
 package com.example.screen
 
-import MessageC2SPayload
+import com.example.MessageC2SPayload
 import com.example.widget.client.PlaceholderTextFieldWidget
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
