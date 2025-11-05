@@ -17,7 +17,7 @@ data class MessageEntity(
     @SequenceGenerator(name = "id_seq", sequenceName = "messages_id_seq", allocationSize = 1)
     val id: Int = 0,
 
-    @Column(name = "uuid", nullable = false)
+    @Column(name = "player_uuid", nullable = false)
     val playerUuid: UUID?,
 
     @Column(name = "text", nullable = false)
